@@ -1,0 +1,10 @@
+module "deny_all_subnets" {
+  source              = "./modules/deny_all_route"
+  subnet_ids          = [
+    "/subscriptions/xxxx/resourceGroups/rg-demo/providers/Microsoft.Network/virtualNetworks/vnet-demo/subnets/subnet-a",
+    "/subscriptions/xxxx/resourceGroups/rg-demo/providers/Microsoft.Network/virtualNetworks/vnet-demo/subnets/subnet-b"
+  ]
+  resource_group_name = "rg-demo"
+  location            = "eastus"
+  route_table_name    = "deny-all-subnets"
+}
